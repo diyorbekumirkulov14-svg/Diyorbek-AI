@@ -3,244 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Taomlar | Yorug Rangli Zakaz</title>
+    <title>2.5 Litr Cola</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <div class="brand">
-          <span class="logo">Taomlar</span>
-          <p>yorug rangli taomlar</p>
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+
+    <main class="card">
+      <div class="badge">✨ Maxsus taklif ✨</div>
+      <h1>2.5 litr Cola</h1>
+      <p class="subtitle">
+        Iltimos , Coca-cola olib bering!
+      </p>
+
+      <div class="bottle-wrap">
+        <div class="bottle">
+          <div class="cap"></div>
+          <div class="label">COLA</div>
         </div>
-        <button class="menu-toggle" aria-expanded="false" aria-label="Menyu ochish">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="nav-links">
-          <a href="#menu">Menu</a>
-          <a href="#steps">Qanday</a>
-          <a href="#reviews">Sharhlar</a>
-          <a href="#contact">Kontakt</a>
-        </nav>
       </div>
-    </header>
 
-    <main>
-      <section class="hero section-bright">
-        <div class="container hero-grid">
-          <div>
-            <span class="eyebrow">Yangi taomlar har kuni</span>
-            <h1>Eng yorqin, mazali va tez takliflar</h1>
-            <p>
-              Oson zakaz qil, tez yetkazib berish, hammasi mobilga mos. O‘z
-              sevimli taomlaringni yorug ranglarda tanla.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#categories">Kategoriyalar</a>
-              <a class="btn btn-secondary" href="#contact">Buyurtma berish</a>
-            </div>
-          </div>
-          <div class="hero-card">
-            <div class="food-badge">Yangi</div>
-            <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=720&q=80" alt="Yorug taom" />
-            <div class="food-card-info">
-              <h2>Rangli taomlar to‘plami</h2>
-              <p>O‘t o‘chirish yoki salqin yoruglik bilan har kungi taom.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="categories" class="section section-categories">
-        <div class="container">
-          <div class="section-head">
-            <p class="section-label">Supermarket</p>
-            <h2>Yirik kategoriyalar bilan tez top</h2>
-          </div>
-          <div class="categories-grid">
-            <article class="category-card" data-category="ovqat">
-              <div class="category-label">Ovqat</div>
-              <h3>Issiq va mazali</h3>
-              <p>Rang-barang bosh taomlarimiz bilan to‘ying.</p>
-            </article>
-            <article class="category-card" data-category="ichimlik">
-              <div class="category-label">Ichimlik</div>
-              <h3>Sovuq va shirin</h3>
-              <p>Taomga mos ichimliklar va mevali kokteyllar.</p>
-            </article>
-            <article class="category-card" data-category="shirinlik">
-              <div class="category-label">Shirinlik</div>
-              <h3>Yoqimli desert</h3>
-              <p>Asal, shirin va sevimli ta’mlar.</p>
-            </article>
-            <article class="category-card" data-category="non">
-              <div class="category-label">Non</div>
-              <h3>Yangi pishiriqlar</h3>
-              <p>Yumshoq nonlar, kulchalar va pastry.</p>
-            </article>
-            <article class="category-card" data-category="tez">
-              <div class="category-label">Tez</div>
-              <h3>Snack va tayyor</h3>
-              <p>Burger, lavash va oson ovqatlar.</p>
-            </article>
-            <article class="category-card" data-category="soglom">
-              <div class="category-label">Sog‘lom</div>
-              <h3>Fit va vitaminli</h3>
-              <p>Salatlar, smoothie va diet ovqatlar.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="menu" class="section section-menu">
-        <div class="container">
-          <div class="section-head">
-            <p class="section-label">Menu</p>
-            <h2>Sevimli taomlaringni tanla</h2>
-          </div>
-
-          <div class="menu-filters">
-            <button class="filter-btn active" data-category="all">Hammasi</button>
-            <button class="filter-btn" data-category="ovqat">Ovqat</button>
-            <button class="filter-btn" data-category="ichimlik">Ichimlik</button>
-            <button class="filter-btn" data-category="shirinlik">Shirinlik</button>
-          </div>
-
-          <div class="menu-grid" id="menuGrid"></div>
-        </div>
-      </section>
-
-      <section id="steps" class="section section-steps">
-        <div class="container">
-          <div class="section-head text-center">
-            <p class="section-label">Qanday ishlaydi</p>
-            <h2>3 qadamda yorug zakaz</h2>
-          </div>
-          <div class="steps-grid">
-            <article class="step-card">
-              <span class="step-number">1</span>
-              <h3>Tanla</h3>
-              <p>Menu dan eng sevimli taomni tanla va qo‘sh.</p>
-            </article>
-            <article class="step-card">
-              <span class="step-number">2</span>
-              <h3>Buyurtma qil</h3>
-              <p>Bir nechta klikda buyurtma formasini to‘ldir.</p>
-            </article>
-            <article class="step-card">
-              <span class="step-number">3</span>
-              <h3>Yaxshi ovqatlan</h3>
-              <p>Tez va ishonchli yetkazib berish bilan taomdan bahra ol.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section-order">
-        <div class="container order-grid">
-          <div>
-            <p class="section-label">Sizning savatingiz</p>
-            <h2>Tez va qulay buyurtma</h2>
-            <p>
-              Savatingizga taom qo‘shing, miqdorni o‘zgartiring, va oson to‘lov
-              qiling.
-            </p>
-            <div class="order-summary">
-              <div class="summary-row">
-                <span>Taomlar jami</span>
-                <span id="itemCount">0</span>
-              </div>
-              <div class="summary-row">
-                <span>Umumiy narx</span>
-                <strong id="orderTotal">0 so‘m</strong>
-              </div>
-            </div>
-            <button id="checkoutButton" class="btn btn-primary btn-full" disabled>
-              To‘lovga o‘tish
-            </button>
-          </div>
-          <div class="order-preview" id="orderPreview">
-            <p class="empty-state">Savatingiz bo‘sh, taom qo‘shing.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="reviews" class="section section-reviews">
-        <div class="container">
-          <div class="section-head text-center">
-            <p class="section-label">Sharhlar</p>
-            <h2>Foydalanuvchilardan fikrlar</h2>
-          </div>
-          <div class="reviews-grid">
-            <article class="review-card">
-              <p>Taomlar juda mazali va dizayni ajoyib! Zakaz qilish juda oson.</p>
-              <h4>Muhammad</h4>
-            </article>
-            <article class="review-card">
-              <p>Yorqin ranglar va tez yetkazib berish — men juda xursandman.</p>
-              <h4>Gulbahor</h4>
-            </article>
-            <article class="review-card">
-              <p>Nafaqat sayt, balki menyu ham chiroyli. Har safar qoniqaman.</p>
-              <h4>Aziz</h4>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section section-contact">
-        <div class="container contact-grid">
-          <div>
-            <h2>Buyurtma va savollar uchun</h2>
-            <p>Biz bilan bog‘laning, tez orada javob beramiz.</p>
-            <ul class="contact-list">
-              <li>Telefon: +998 90 123 45 67</li>
-              <li>Email: info@taomlar.uz</li>
-              <li>Manzil: Toshkent, O‘zbekiston</li>
-            </ul>
-          </div>
-          <form class="contact-form">
-            <label>
-              Ism
-              <input type="text" placeholder="Ismingiz" />
-            </label>
-            <label>
-              Telefon
-              <input type="tel" placeholder="+998 90 123 45 67" />
-            </label>
-            <label>
-              Xabar
-              <textarea rows="4" placeholder="Qanday yordam bera olishimiz mumkin?"></textarea>
-            </label>
-            <button type="submit" class="btn btn-primary btn-full">Yuborish</button>
-          </form>
-        </div>
-      </section>
-
-      <div class="modal-overlay hidden" id="orderModalOverlay"></div>
-      <div class="order-modal hidden" id="orderModal">
-        <div class="modal-header">
-          <h2>Buyurtmani tasdiqlash</h2>
-          <button class="close-modal" id="closeModal" aria-label="Yopish">×</button>
-        </div>
-        <p class="modal-note">Siz buyurtmani savatga qo‘shdingiz. Yetkazib berishda naqd pul to‘lash.</p>
-        <div class="modal-summary" id="modalSummary"></div>
-        <div class="modal-total">
-          <span>Umumiy summa</span>
-          <strong id="modalTotal">0 so‘m</strong>
-        </div>
-        <button class="btn btn-primary btn-full" id="confirmOrderButton">Buyurtmani jo‘natish</button>
+      <div class="actions">
+        <button id="yesBtn" class="btn btn-yes">Ha, albatta</button>
+        <button id="noBtn" class="btn btn-no">Yo‘q</button>
       </div>
+
+      <p id="message" class="message">Tanlang va ko‘ring!</p>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© 2026 Taomlar. Yorug va mazali online zakaz.</p>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
