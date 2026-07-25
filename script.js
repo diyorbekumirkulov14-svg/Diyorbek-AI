@@ -4,10 +4,36 @@ const message = document.getElementById('message');
 const bottle = document.getElementById('bottle');
 
 const messages = [
-  'Zo‘r tanlov! Endi hamma narsa yorqinroq bo‘ladi ✨',
-  'Bu yerda ha degan javob eng chiroyli variant 😊',
-  'Oberin kabi yalqinishlar ketaveradi, ishoning! 💖'
+  'Aniqmi? Ishonchimiz komil 😊',
+  'Ha, bu juda to‘g‘ri tanlov — yanada shirinroq bo‘ladi 💖',
+  'Yalqinishlar cheksiz davom etaveradi, ishonchli va chiroyli 💫',
+  'Aniqmi, bu yerda ha degan javob eng yaxshisi 🩷',
+  'Ishonchingiz komil, va bu his cheksiz davom etadi ✨'
 ];
+
+const noPhrases = [
+  'Adajon...',
+  'Iltimos, ada!',
+  'Jon ada...',
+  'Bittagina-da!',
+  'Muzdeggina...',
+  'Iltimos-da...',
+  'Adajonim-a...',
+  'Rozi bo\'ling...',
+  'Bitta xolos!',
+  'Jonim adajon!',
+  'Mehribonim...',
+  'Xo\'p deng...',
+  'Faqat bugun!',
+  'Oxirgi marta!',
+  'Siz yaxshisiz-da...',
+  'Tushuning endi...',
+  'Maylimi, ada?',
+  'Xafa bo\'laman-a...',
+  'Iltimosss!',
+  'Yo\'q demang...'
+];
+let noIndex = 0;
 
 function vibrate(pattern) {
   if (navigator.vibrate) {
@@ -44,7 +70,7 @@ yesBtn.addEventListener('click', () => {
   void bottle.offsetWidth;
   bottle.classList.add('is-pop');
   createConfetti();
-  message.textContent = messages[Math.floor(Math.random() * messages.length)];
+  message.textContent = 'Shu yerga bittasini tanlang';
 });
 
 noBtn.addEventListener('click', () => {
@@ -53,5 +79,7 @@ noBtn.addEventListener('click', () => {
   const offsetX = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 30 + 12);
   const offsetY = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 16 + 8);
   noBtn.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-  message.textContent = 'Ha desang, bu sahna yanada chiroyli bo‘ladi 😎';
+  noBtn.textContent = noPhrases[noIndex];
+  noIndex = (noIndex + 1) % noPhrases.length;
+  message.textContent = 'Shu yerga bittasini tanlang';
 });
