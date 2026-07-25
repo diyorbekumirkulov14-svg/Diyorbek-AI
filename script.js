@@ -23,16 +23,14 @@ function createConfetti() {
 }
 
 yesBtn.addEventListener('click', () => {
+  noBtn.style.transform = 'translate(0, 0)';
   createConfetti();
   message.textContent = messages[Math.floor(Math.random() * messages.length)];
 });
 
 noBtn.addEventListener('click', () => {
-  noBtn.style.position = 'absolute';
-  const maxX = window.innerWidth - 140;
-  const maxY = window.innerHeight - 60;
-  noBtn.style.left = `${Math.random() * maxX}px`;
-  noBtn.style.top = `${Math.random() * maxY}px`;
-  noBtn.style.transform = 'translate(0, 0)';
+  const offsetX = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 30 + 12);
+  const offsetY = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 16 + 8);
+  noBtn.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
   message.textContent = 'Ha desang, bu sahna yanada chiroyli bo‘ladi 😎';
 });
