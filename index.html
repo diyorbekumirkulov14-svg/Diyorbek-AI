@@ -10,27 +10,40 @@
     <div class="aurora aurora-1"></div>
     <div class="aurora aurora-2"></div>
 
-    <main class="card">
-      <div class="badge">✨ Maxsus taklif ✨</div>
-      <h1>2.5 litr Cola</h1>
-      <p class="subtitle">
-        Iltimos , Coca-cola olib bering!
-      </p>
-
-      <div class="bottle-wrap">
-        <div class="bottle">
-          <div class="cap"></div>
-          <div class="label">COLA</div>
+    <div class="phone-shell" role="application" aria-label="Coca-Cola taklif ekrani">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons">
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="battery"></div>
+          </div>
         </div>
-      </div>
 
-      <div class="actions">
-        <button id="yesBtn" class="btn btn-yes">Ha, albatta</button>
-        <button id="noBtn" class="btn btn-no">Yo‘q</button>
-      </div>
+        <main class="card">
+          <div class="badge"><span>✨</span> Maxsus taklif</div>
+          <h1>2.5 litr Cola</h1>
+          <p class="subtitle">Iltimos, Coca-Cola olib bering!</p>
 
-      <p id="message" class="message">Tanlang va ko‘ring!</p>
-    </main>
+          <div class="bottle-wrap">
+            <div class="bottle" id="bottle">
+              <div class="cap"></div>
+              <div class="label">COLA</div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="yesBtn" class="btn btn-yes">Ha, albatta</button>
+            <button id="noBtn" class="btn btn-no">Yo‘q</button>
+          </div>
+
+          <p id="message" class="message">Tanlang va ko‘ring!</p>
+        </main>
+      </div>
+    </div>
 
     <script src="app.js"></script>
   </body>
