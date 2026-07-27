@@ -1,85 +1,98 @@
-const yesBtn = document.getElementById('yesBtn');
-const noBtn = document.getElementById('noBtn');
-const message = document.getElementById('message');
-const bottle = document.getElementById('bottle');
-
-const messages = [
-  'Aniqmi? Ishonchimiz komil 😊',
-  'Ha, bu juda to‘g‘ri tanlov — yanada shirinroq bo‘ladi 💖',
-  'Yalqinishlar cheksiz davom etaveradi, ishonchli va chiroyli 💫',
-  'Aniqmi, bu yerda ha degan javob eng yaxshisi 🩷',
-  'Ishonchingiz komil, va bu his cheksiz davom etadi ✨'
+const items = [
+  { name: '1 litr suv', price: 2000, image: 'https://avatars.mds.yandex.net/i?id=88410da7c32053de4b8ce824f0f0035bfad1b113-5714482-images-thumbs&n=13' },
+  { name: '2 litr suv', price: 5000, image: 'https://avatars.mds.yandex.net/i?id=9e5dbdfcec22b9ea649998ace750c0bb3372e45a-8000733-images-thumbs&n=13' },
+  { name: 'Non', price: 2000, image: 'https://avatars.mds.yandex.net/i?id=ea855bedada677f08febd8a201c1222f8f0dc53a-12598198-images-thumbs&n=13' },
+  { name: '10 000 so\'mlik pul', price: 12000, image: 'https://avatars.mds.yandex.net/get-mpic/13969676/2a0000019659f056a0e72fbb9ea6f8a7ce4c/orig' },
+  { name: 'Qatiq', price: 2000, image: 'https://cdn.zoomda.uz/products/2025/11/28/1764312581005344178.webp' },
+  { name: 'Piyola', price: 2000, image: 'https://avatars.mds.yandex.net/i?id=b59a9de87c34ca4f018acea6c2c7b58989332dac-9065769-images-thumbs&n=13' },
+  { name: 'Telefon', price: 1500000, image: 'https://i.ytimg.com/vi/s9JIymPj0no/maxresdefault.jpg' }
 ];
 
-const noPhrases = [
-  'Adajon...',
-  'Iltimos, ada!',
-  'Jon ada...',
-  'Bittagina-da!',
-  'Muzdeggina...',
-  'Iltimos-da...',
-  'Adajonim-a...',
-  'Rozi bo\'ling...',
-  'Bitta xolos!',
-  'Jonim adajon!',
-  'Mehribonim...',
-  'Xo\'p deng...',
-  'Faqat bugun!',
-  'Oxirgi marta!',
-  'Siz yaxshisiz-da...',
-  'Tushuning endi...',
-  'Maylimi, ada?',
-  'Xafa bo\'laman-a...',
-  'Iltimosss!',
-  'Yo\'q demang...'
-];
-let noIndex = 0;
+const itemsContainer = document.getElementById('items');
+const totalEl = document.getElementById('total');
+const resetBtn = document.getElementById('resetBtn');
+const buyBtn = document.getElementById('buyBtn');
+const messageEl = document.getElementById('message');
+const selectedItems = new Set();
 
-function vibrate(pattern) {
-  if (navigator.vibrate) {
-    navigator.vibrate(pattern);
+function renderItems() {
+  itemsContainer.innerHTML = '';
+
+  items.forEach((item) => {
+    const card = document.createElement('div');
+    card.className = 'item';
+
+    if (selectedItems.has(item.name)) {
+      card.classList.add('active');
+    }
+
+    card.innerHTML = `
+      <img class="item-image" src="${item.image}" alt="${item.name}" />
+      <div class="item-content">
+        <span class="item-name">${item.name}</span>
+        <span class="item-price">${item.price.toLocaleString()} so'm</span>
+      </div>
+    `;
+
+    card.addEventListener('click', () => toggleItem(item.name));
+    itemsContainer.appendChild(card);
+  });
+}
+
+function toggleItem(name) {
+  if (selectedItems.has(name)) {
+    selectedItems.delete(name);
+  } else {
+    selectedItems.add(name);
   }
+
+  renderItems();
+  updateTotal();
 }
 
-function triggerPress(button) {
-  button.classList.remove('is-press');
-  void button.offsetWidth;
-  button.classList.add('is-press');
-  setTimeout(() => button.classList.remove('is-press'), 120);
+function updateTotal() {
+  const total = items.reduce((sum, item) => {
+    return selectedItems.has(item.name) ? sum + item.price : sum;
+  }, 0);
+
+  totalEl.textContent = total.toLocaleString();
 }
 
-function createConfetti() {
-  const colors = ['#ff4fb3', '#ffb347', '#ffd166', '#7afcff'];
-  for (let i = 0; i < 24; i += 1) {
-    const piece = document.createElement('span');
-    piece.className = 'confetti';
-    piece.style.left = `${Math.random() * 100}%`;
-    piece.style.top = '-10px';
-    piece.style.background = colors[i % colors.length];
-    piece.style.animationDelay = `${Math.random() * 0.15}s`;
-    document.body.appendChild(piece);
-    setTimeout(() => piece.remove(), 1400);
-  }
-}
-
-yesBtn.addEventListener('click', () => {
-  vibrate([10, 20, 10]);
-  triggerPress(yesBtn);
-  noBtn.style.transform = 'translate(0, 0)';
-  bottle.classList.remove('is-pop');
-  void bottle.offsetWidth;
-  bottle.classList.add('is-pop');
-  createConfetti();
-  message.textContent = 'Shu yerga bittasini tanlang';
+resetBtn.addEventListener('click', () => {
+  selectedItems.clear();
+  renderItems();
+  updateTotal();
+  messageEl.classList.remove('show');
+  messageEl.textContent = '';
 });
 
-noBtn.addEventListener('click', () => {
-  vibrate([8, 12, 8]);
-  triggerPress(noBtn);
-  const offsetX = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 30 + 12);
-  const offsetY = (Math.random() > 0.5 ? 1 : -1) * (Math.random() * 16 + 8);
-  noBtn.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-  noBtn.textContent = noPhrases[noIndex];
-  noIndex = (noIndex + 1) % noPhrases.length;
-  message.textContent = 'Shu yerga bittasini tanlang';
+buyBtn.addEventListener('click', () => {
+  if (selectedItems.size === 0) {
+    messageEl.textContent = 'Hech narsa tanlanmagan. Iltimos, biror mahsulotni tanlang.';
+    messageEl.classList.add('show');
+    return;
+  }
+
+  while (true) {
+    const enteredCode = prompt("Kodni kiriting (egadan so'rang):");
+
+    if (enteredCode === null) {
+      messageEl.textContent = 'Sotib olish bekor qilindi.';
+      messageEl.classList.add('show');
+      break;
+    }
+
+    if (enteredCode === '1234') {
+      messageEl.textContent = 'Sotib olindi! Tez orada yetkazib beriladi.';
+      messageEl.classList.add('show');
+      break;
+    }
+
+    messageEl.textContent = `Noto'g'ri kod (${enteredCode}). Iltimos, egadan so'rang.`;
+    messageEl.classList.add('show');
+    // loop to prompt again
+  }
 });
+
+renderItems();
+updateTotal();

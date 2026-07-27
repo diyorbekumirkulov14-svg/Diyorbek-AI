@@ -3,48 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.5 Litr Cola</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Mahsulotlar ro'yxati</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="aurora aurora-1"></div>
-    <div class="aurora aurora-2"></div>
+    <div class="container">
+      <h1>Mahsulotlar ro'yxati</h1>
+      <p>Quyidagi mahsulotlar narxlari bilan tanlang.</p>
 
-    <div class="phone-shell" role="application" aria-label="Coca-Cola taklif ekrani">
-      <div class="phone-notch"></div>
-      <div class="phone-screen">
-        <div class="status-bar">
-          <span>9:41</span>
-          <div class="status-icons">
-            <span></span>
-            <span></span>
-            <span></span>
-            <div class="battery"></div>
-          </div>
+      <div class="items" id="items"></div>
+
+      <div class="summary">
+        <h2>Jami: <span id="total">0</span> so'm</h2>
+        <div class="actions">
+          <button id="buyBtn">Sotib olish</button>
+          <button id="resetBtn">Qayta tiklash</button>
         </div>
-
-        <main class="card">
-          <div class="badge"><span>✨</span> Maxsus taklif</div>
-          <h1>2.5 litr Cola</h1>
-          <p class="subtitle">Iltimos, Coca-Cola olib bering!</p>
-
-          <div class="bottle-wrap">
-            <div class="bottle" id="bottle">
-              <div class="cap"></div>
-              <div class="label">COLA</div>
-            </div>
-          </div>
-
-          <div class="actions">
-            <button id="yesBtn" class="btn btn-yes">Ha, albatta</button>
-            <button id="noBtn" class="btn btn-no">Yo‘q</button>
-          </div>
-
-          <p id="message" class="message">Shu yerga bittasini tanlang</p>
-        </main>
       </div>
+
+      <div id="message" class="message" aria-live="polite"></div>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
