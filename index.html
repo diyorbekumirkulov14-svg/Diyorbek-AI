@@ -3,27 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mahsulotlar ro'yxati</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Subway Dash</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Mahsulotlar ro'yxati</h1>
-      <p>Quyidagi mahsulotlar narxlari bilan tanlang.</p>
+    <div class="game-container" role="application" aria-label="Subway Dash o'yini">
+      <header class="game-header">
+        <div class="badge"><span>✨</span> Subway Run</div>
+        <div class="title-wrap">
+          <h1>Subway Dash</h1>
+          <p class="subtitle">Chapga, o‘ngga siljib, to‘siqlardan qoching va rekordni yangilang.</p>
+        </div>
+      </header>
 
-      <div class="items" id="items"></div>
-
-      <div class="summary">
-        <h2>Jami: <span id="total">0</span> so'm</h2>
-        <div class="actions">
-          <button id="buyBtn">Sotib olish</button>
-          <button id="resetBtn">Qayta tiklash</button>
+      <div class="stats">
+        <div class="stat">
+          <span>Ball</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="stat">
+          <span>Masofa</span>
+          <strong id="distance">0</strong>m
         </div>
       </div>
 
-      <div id="message" class="message" aria-live="polite"></div>
+      <div class="runner-area" id="playArea">
+        <div class="game-view">
+          <div class="track" id="track">
+            <div class="lane lane-0"></div>
+            <div class="lane lane-1"></div>
+            <div class="lane lane-2"></div>
+            <div class="runner" id="runner">
+              <span class="head"></span>
+              <span class="torso"></span>
+              <span class="arm arm-left"></span>
+              <span class="arm arm-right"></span>
+              <span class="leg leg-left"></span>
+              <span class="leg leg-right"></span>
+              <span class="board"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="startBtn" class="btn btn-yes">Boshlash</button>
+      </div>
+
+      <p id="message" class="message">Ekranga teging yoki cherting, keyin chap/o‘ngga siljiting.</p>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
