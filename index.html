@@ -1,58 +1,126 @@
 <!DOCTYPE html>
 <html lang="uz">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Subway Dash</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="game-container" role="application" aria-label="Subway Dash o'yini">
-      <header class="game-header">
-        <div class="badge"><span>✨</span> Subway Run</div>
-        <div class="title-wrap">
-          <h1>Subway Dash</h1>
-          <p class="subtitle">Chapga, o‘ngga siljib, to‘siqlardan qoching va rekordni yangilang.</p>
-        </div>
-      </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobil App Dizayn</title>
+  <link rel="stylesheet" href="./styles.css">
+  <!-- FontAwesome ikonkalari -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
-      <div class="stats">
-        <div class="stat">
-          <span>Ball</span>
-          <strong id="score">0</strong>
-        </div>
-        <div class="stat">
-          <span>Masofa</span>
-          <strong id="distance">0</strong>m
-        </div>
+  <!-- Yuqori qism (Header) -->
+  <header class="app-header">
+    <div class="user-profile">
+      <div class="avatar">
+        <i class="fa-solid fa-user"></i>
       </div>
-
-      <div class="runner-area" id="playArea">
-        <div class="game-view">
-          <div class="track" id="track">
-            <div class="lane lane-0"></div>
-            <div class="lane lane-1"></div>
-            <div class="lane lane-2"></div>
-            <div class="runner" id="runner">
-              <span class="head"></span>
-              <span class="torso"></span>
-              <span class="arm arm-left"></span>
-              <span class="arm arm-right"></span>
-              <span class="leg leg-left"></span>
-              <span class="leg leg-right"></span>
-              <span class="board"></span>
-            </div>
-          </div>
-        </div>
+      <div class="user-info">
+        <span class="greeting">Xush kelibsiz! 👋</span>
+        <h2 class="username">Diyorbek</h2>
       </div>
+    </div>
+    <button class="icon-btn" id="themeToggle">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </header>
 
-      <div class="actions">
-        <button id="startBtn" class="btn btn-yes">Boshlash</button>
-      </div>
-
-      <p id="message" class="message">Ekranga teging yoki cherting, keyin chap/o‘ngga siljiting.</p>
+  <main class="app-content">
+    <!-- Qidiruv paneli -->
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Qidirish...">
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <!-- Banner (Hero Card) -->
+    <section class="hero-card">
+      <div class="hero-text">
+        <h3>Zamonaviy Dizayn</h3>
+        <p>Mobil qurilmalar uchun maxsus moslashtirilgan interfeys.</p>
+        <button class="cta-btn">Boshlash</button>
+      </div>
+      <div class="hero-icon">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </div>
+    </section>
+
+    <!-- Kategoriyalar -->
+    <section class="section">
+      <div class="section-header">
+        <h3>Xizmatlar</h3>
+        <a href="#" class="see-all">Barchasi</a>
+      </div>
+      <div class="categories-grid">
+        <div class="cat-card active">
+          <i class="fa-solid fa-code"></i>
+          <span>Dasturlash</span>
+        </div>
+        <div class="cat-card">
+          <i class="fa-solid fa-palette"></i>
+          <span>Dizayn</span>
+        </div>
+        <div class="cat-card">
+          <i class="fa-solid fa-gamepad"></i>
+          <span>O'yinlar</span>
+        </div>
+        <div class="cat-card">
+          <i class="fa-solid fa-rocket"></i>
+          <span>Loyiha</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- So'nggi Amallar -->
+    <section class="section">
+      <div class="section-header">
+        <h3>So'nggi harakatlar</h3>
+      </div>
+      <div class="activity-list">
+        <div class="activity-item">
+          <div class="act-icon icon-blue">
+            <i class="fa-solid fa-mobile-screen"></i>
+          </div>
+          <div class="act-details">
+            <h4>Mobil loyiha yaratildi</h4>
+            <span>2 soat oldin</span>
+          </div>
+          <span class="status status-success">Bajarildi</span>
+        </div>
+        <div class="activity-item">
+          <div class="act-icon icon-purple">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div class="act-details">
+            <h4>UI/UX Elementlar</h4>
+            <span>Kecha</span>
+          </div>
+          <span class="status status-pending">Jarayonda</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pastki Navigatsiya Bar (Bottom Navigation) -->
+  <nav class="bottom-nav">
+    <a href="#" class="nav-item active">
+      <i class="fa-solid fa-house"></i>
+      <span>Bosh sahifa</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fa-solid fa-compass"></i>
+      <span>Kashf eting</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fa-solid fa-bell"></i>
+      <span>Xabarlar</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="fa-solid fa-gear"></i>
+      <span>Sozlamalar</span>
+    </a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
 </html>
