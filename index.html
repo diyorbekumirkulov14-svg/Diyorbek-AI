@@ -3,123 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobil App Dizayn</title>
+  <title>Diyorbek Ice Cream | Muzqaymoq marketi</title>
   <link rel="stylesheet" href="./styles.css">
   <!-- FontAwesome ikonkalari -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Yuqori qism (Header) -->
   <header class="app-header">
     <div class="user-profile">
-      <div class="avatar">
-        <i class="fa-solid fa-user"></i>
-      </div>
+      <div class="brand-mark"><i class="fa-solid fa-ice-cream"></i></div>
       <div class="user-info">
-        <span class="greeting">Xush kelibsiz! 👋</span>
-        <h2 class="username">Diyorbek</h2>
+        <span class="greeting">Diyorbek marketi</span>
+        <h2 class="username">Mazali kunlar!</h2>
       </div>
     </div>
-    <button class="icon-btn" id="themeToggle">
-      <i class="fa-solid fa-moon"></i>
-    </button>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Tungi rejim"><i class="fa-solid fa-moon"></i></button>
+      <button class="cart-btn" id="cartButton" aria-label="Savatni ochish"><i class="fa-solid fa-bag-shopping"></i><b id="cartCount">0</b></button>
+    </div>
   </header>
 
   <main class="app-content">
-    <!-- Qidiruv paneli -->
     <div class="search-box">
       <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="text" placeholder="Qidirish...">
+      <input id="searchInput" type="search" placeholder="Muzqaymoq qidiring..." aria-label="Mahsulot qidirish">
     </div>
 
-    <!-- Banner (Hero Card) -->
     <section class="hero-card">
       <div class="hero-text">
-        <h3>Zamonaviy Dizayn</h3>
-        <p>Mobil qurilmalar uchun maxsus moslashtirilgan interfeys.</p>
-        <button class="cta-btn">Boshlash</button>
+        <span class="eyebrow">Bugungi shirin taklif</span>
+        <h1>Issiq kunda<br><strong>muzdek zavq!</strong></h1>
+        <p>2 ta konusli muzqaymoq oling va uchinchisi bizdan.</p>
+        <button class="cta-btn" id="offerButton">Taklifni ko'rish <i class="fa-solid fa-arrow-right"></i></button>
       </div>
-      <div class="hero-icon">
-        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      <div class="hero-icecream" aria-hidden="true"><span class="scoop scoop-pink"></span><span class="scoop scoop-cream"></span><span class="cone"></span></div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h3>Kategoriyalar</h3>
+        <span class="location"><i class="fa-solid fa-location-dot"></i> Yuqori Chirchiq</span>
+      </div>
+      <div class="categories-grid" id="categoryList">
+        <button class="cat-card active" data-category="all"><i class="fa-solid fa-border-all"></i><span>Barchasi</span></button>
+        <button class="cat-card" data-category="cone"><i class="fa-solid fa-ice-cream"></i><span>Konusli</span></button>
+        <button class="cat-card" data-category="cup"><i class="fa-solid fa-bowl-food"></i><span>Stakanchada</span></button>
+        <button class="cat-card" data-category="cake"><i class="fa-solid fa-cake-candles"></i><span>Tortlar</span></button>
       </div>
     </section>
 
-    <!-- Kategoriyalar -->
-    <section class="section">
+    <section class="section products-section">
       <div class="section-header">
-        <h3>Xizmatlar</h3>
-        <a href="#" class="see-all">Barchasi</a>
+        <div><span class="eyebrow">Yangi va mazali</span><h3>Mashhur mahsulotlar</h3></div>
+        <span class="product-count" id="productCount">6 ta mahsulot</span>
       </div>
-      <div class="categories-grid">
-        <div class="cat-card active">
-          <i class="fa-solid fa-code"></i>
-          <span>Dasturlash</span>
-        </div>
-        <div class="cat-card">
-          <i class="fa-solid fa-palette"></i>
-          <span>Dizayn</span>
-        </div>
-        <div class="cat-card">
-          <i class="fa-solid fa-gamepad"></i>
-          <span>O'yinlar</span>
-        </div>
-        <div class="cat-card">
-          <i class="fa-solid fa-rocket"></i>
-          <span>Loyiha</span>
-        </div>
-      </div>
+      <div class="products-grid" id="productsGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>Bu qidiruv bo'yicha mahsulot topilmadi.</div>
     </section>
 
-    <!-- So'nggi Amallar -->
-    <section class="section">
-      <div class="section-header">
-        <h3>So'nggi harakatlar</h3>
-      </div>
-      <div class="activity-list">
-        <div class="activity-item">
-          <div class="act-icon icon-blue">
-            <i class="fa-solid fa-mobile-screen"></i>
-          </div>
-          <div class="act-details">
-            <h4>Mobil loyiha yaratildi</h4>
-            <span>2 soat oldin</span>
-          </div>
-          <span class="status status-success">Bajarildi</span>
-        </div>
-        <div class="activity-item">
-          <div class="act-icon icon-purple">
-            <i class="fa-solid fa-layer-group"></i>
-          </div>
-          <div class="act-details">
-            <h4>UI/UX Elementlar</h4>
-            <span>Kecha</span>
-          </div>
-          <span class="status status-pending">Jarayonda</span>
-        </div>
-      </div>
-    </section>
+    <section class="address-strip"><i class="fa-solid fa-truck-fast"></i><div><strong>Nurli yo'l mahallasiga yetkazib beramiz</strong><span>Qorateba ko'chasi, Toshkent viloyati</span></div><i class="fa-solid fa-chevron-right"></i></section>
   </main>
 
-  <!-- Pastki Navigatsiya Bar (Bottom Navigation) -->
   <nav class="bottom-nav">
-    <a href="#" class="nav-item active">
-      <i class="fa-solid fa-house"></i>
-      <span>Bosh sahifa</span>
-    </a>
-    <a href="#" class="nav-item">
-      <i class="fa-solid fa-compass"></i>
-      <span>Kashf eting</span>
-    </a>
-    <a href="#" class="nav-item">
-      <i class="fa-solid fa-bell"></i>
-      <span>Xabarlar</span>
-    </a>
-    <a href="#" class="nav-item">
-      <i class="fa-solid fa-gear"></i>
-      <span>Sozlamalar</span>
-    </a>
+    <a href="#top" class="nav-item active"><i class="fa-solid fa-house"></i><span>Bosh sahifa</span></a>
+    <a href="#productsGrid" class="nav-item"><i class="fa-solid fa-ice-cream"></i><span>Mahsulotlar</span></a>
+    <a href="#address" class="nav-item"><i class="fa-solid fa-location-dot"></i><span>Manzil</span></a>
+    <a href="#cart" class="nav-item" id="navCart"><i class="fa-solid fa-bag-shopping"></i><span>Savat <em id="navCartCount">0</em></span></a>
   </nav>
+
+  <div class="modal-backdrop" id="cartModal" hidden>
+    <section class="cart-modal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+      <button class="modal-close" id="closeCart" aria-label="Savatni yopish"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-heading"><span class="modal-icon"><i class="fa-solid fa-bag-shopping"></i></span><div><span class="eyebrow">Diyorbek Ice Cream</span><h2 id="cartTitle">Sizning savatingiz</h2></div></div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-empty" id="cartEmpty"><i class="fa-solid fa-basket-shopping"></i><p>Savat hozircha bo'sh</p><span>Mahsulotlardan birini savatga qo'shing.</span></div>
+      <div class="cart-summary" id="cartSummary" hidden><span>Jami summa</span><strong id="cartTotalPrice">0 so'm</strong></div>
+      <button class="order-btn" id="orderButton" hidden>Buyurtma berish <i class="fa-solid fa-arrow-right"></i></button>
+      <div class="order-success" id="orderSuccess" hidden><i class="fa-solid fa-circle-check"></i><h3>Buyurtmangiz qabul qilindi!</h3><p id="orderNumber"></p><strong>Skrinshotni <span>Diyor_bek_14.12</span> profil egasiga yuboring.</strong><small>Pulni ham shu profil egasiga o'tkazing.</small><div class="receipt-actions"><button class="receipt-btn" id="downloadReceipt"><i class="fa-solid fa-camera"></i> Chek skrinshoti</button><button class="receipt-btn primary" id="shareReceipt"><i class="fa-solid fa-share-nodes"></i> Profilga ulashish</button></div><small id="shareStatus"></small></div>
+    </section>
+  </div>
 
   <script src="script.js"></script>
 </body>
